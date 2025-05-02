@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ml-hote <ml-hote@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 05:30:26 by ml-hote           #+#    #+#             */
-/*   Updated: 2025/05/02 05:32:23 by ml-hote          ###   ########.fr       */
+/*   Created: 2024/11/06 09:06:47 by ml-hote           #+#    #+#             */
+/*   Updated: 2024/11/08 14:57:34 by ml-hote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>     
-#include <stdlib.h>     
-#include <signal.h>     
-#include <stdarg.h>     
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	size_t	count;
+	char	*s;
+
+	s = (char *)src;
+	count = 0;
+	if (size == 0)
+		return (ft_strlen(s));
+	while (src[count] != '\0' && count < (size - 1))
+	{
+		dest[count] = src[count];
+		count++;
+	}
+	dest[count] = '\0';
+	return (ft_strlen(s));
+}

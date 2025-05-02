@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ml-hote <ml-hote@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 05:30:26 by ml-hote           #+#    #+#             */
-/*   Updated: 2025/05/02 05:32:23 by ml-hote          ###   ########.fr       */
+/*   Created: 2024/11/26 00:26:40 by ml-hote           #+#    #+#             */
+/*   Updated: 2025/03/24 14:21:33 by ml-hote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>     
-#include <stdlib.h>     
-#include <signal.h>     
-#include <stdarg.h>     
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	int	n;
+
+	n = 0;
+	if (!lst)
+	    return (0);
+	while (lst != NULL)
+	{
+		n++;
+		lst = lst -> next;
+	}
+	return (n);
+}

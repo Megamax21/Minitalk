@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ml-hote <ml-hote@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 05:30:26 by ml-hote           #+#    #+#             */
-/*   Updated: 2025/05/02 05:32:23 by ml-hote          ###   ########.fr       */
+/*   Created: 2024/11/04 13:03:11 by ml-hote           #+#    #+#             */
+/*   Updated: 2024/11/04 13:03:14 by ml-hote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>     
-#include <stdlib.h>     
-#include <signal.h>     
-#include <stdarg.h>     
+#include "libft.h"
+
+int	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}

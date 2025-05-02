@@ -1,16 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ml-hote <ml-hote@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 05:30:26 by ml-hote           #+#    #+#             */
-/*   Updated: 2025/05/02 05:32:23 by ml-hote          ###   ########.fr       */
+/*   Created: 2024/11/05 08:40:26 by ml-hote           #+#    #+#             */
+/*   Updated: 2024/11/05 09:10:48 by ml-hote          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>     
-#include <stdlib.h>     
-#include <signal.h>     
-#include <stdarg.h>     
+#include "libft.h"
+
+int	ft_atoi(const char *s)
+{
+	int	sign;
+	int	i;
+	int	nb;
+
+	nb = 0;
+	i = 0;
+	sign = 1;
+	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
+	{
+		if (s[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		nb = nb * 10 + s[i] - '0';
+		i++;
+	}
+	return (nb * sign);
+}
